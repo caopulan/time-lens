@@ -1,24 +1,78 @@
-# Time Lens · 划词时区转换 0.4.1
+<p align="center"><img src="icons/logo.svg" alt="Time Lens 图标" width="88"></p>
 
-Chrome Manifest V3 本地扩展。浮窗只有上下两块**完全同样式**的时间：上方为来源时间，下方为本地时间。每块只有可确定的星期（如“周六”）、日期、可用的时钟、时区名称及 UTC 偏移。不显示年份、标题、原文、说明、警告条、复制按钮或设置按钮。只有时间、没有日期时，上方日期留空，下方显示相对的跨日关系。
+<h1 align="center">Time Lens</h1>
 
-## 已安装旧版？按这四步更新
+<p align="center">划选网页中的时间，直接看到它在本地的日期与时刻。</p>
 
-1. 解压新 ZIP，将其中 `time-lens` 文件夹的文件复制到**原来加载的扩展目录**，替换旧文件。
-2. 打开 `chrome://extensions/`，点击 Time Lens 卡片上的重新加载按钮，确认版本为 **0.4.1**。
-3. **刷新正在测试的网页。** 仅重新加载扩展不会更新已经打开页面里的旧脚本。
-4. 点击工具栏中的 Time Lens 图标，直接打开设置面板。若工具栏未显示图标，在拼图菜单中固定 Time Lens。
+Chrome / Edge Manifest V3 本地扩展。浮窗上方保留来源时间，下方显示本地时间；星期、日期和 UTC 偏移随事件日期换算。原文没有日期时，浮窗只显示相对的跨日关系。
 
-也可停用旧扩展，再通过“加载已解压的扩展程序”加载新文件夹；不要同时启用两份。
+## 真实网页
 
-## 首次安装
+以下截图来自会议官网和公开 X 帖子中的实际划词操作，目标时区均为 `Asia/Shanghai`。会议截图只裁切了浏览器画面，两张 X 截图按下载原图收录。CVPR 2027 的截止时间尚未到来；其余三个会议示例展示已经过去的截止时间。
 
-1. ZIP 解压到固定目录。
-2. 打开 `chrome://extensions/`，启用开发者模式。
-3. 点击“加载已解压的扩展程序”，选择含 `manifest.json` 的 `time-lens` 目录。
-4. 回到普通 HTTP/HTTPS 网页，刷新后选中**包含明确时区的单个时间表达**，例如 `October 23, 2026 at 10am PDT` 或 `10am PST`。
+### 会议截止时间
 
-Chrome 内部页面、Chrome 网上应用店和内置 PDF 查看器受限制；本版本也不匹配本地 `file://` 页面。站点权限被设为“点击时”时，需先允许扩展访问该站点。
+<p align="center"><a href="docs/screenshots/cvpr-2027-submission.jpg"><img src="docs/screenshots/cvpr-2027-submission.jpg" alt="CVPR 2027 官网的投稿时间与 Time Lens 跨日换算浮窗" width="900"></a></p>
+<p align="center"><strong>CVPR 2027 · 主会全文投稿</strong><br><code>2026-11-16 23:59 AoE → 2026-11-17 19:59</code> · <a href="https://cvpr.thecvf.com/Conferences/2027/CallForPapers">官网原页</a></p>
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <a href="docs/screenshots/iclr-2027-workshop.jpg"><img src="docs/screenshots/iclr-2027-workshop.jpg" alt="ICLR 2027 Workshop 申请时间跨日换算" width="440"></a><br>
+      <strong>ICLR 2027 · Workshop 申请</strong><br>
+      <code>2026-10-09 23:59 AoE → 2026-10-10 19:59</code><br>
+      <a href="https://iclr.cc/Conferences/2027/CallForWorkshops">官网原页</a>
+    </td>
+    <td align="center" valign="top" width="50%">
+      <a href="docs/screenshots/aaai-2027-full-paper.jpg"><img src="docs/screenshots/aaai-2027-full-paper.jpg" alt="AAAI-27 全文投稿时间跨日换算" width="440"></a><br>
+      <strong>AAAI-27 · 主会全文投稿</strong><br>
+      <code>2026-07-28 23:59 UTC−12 → 2026-07-29 19:59</code><br>
+      <a href="https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/">官网原页</a>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><a href="docs/screenshots/emnlp-2026-industry.jpg"><img src="docs/screenshots/emnlp-2026-industry.jpg" alt="EMNLP 2026 Industry Track 投稿时间与 Time Lens 跨日换算浮窗" width="900"></a></p>
+<p align="center"><strong>EMNLP 2026 · Industry Track 投稿</strong><br><code>2026-06-16 23:59 UTC−12 → 2026-06-17 19:59</code> · <a href="https://2026.emnlp.org/calls/industry_track/">官网原页</a></p>
+
+### 推文里的相对时间
+
+只划选 `EOD PST` 或 `10am PST` 时，选区没有完整事件日期。浮窗给出“第二天”与本地时刻，不把帖子的发布时间或选区外的 `today` / `tomorrow` 猜成事件日期。
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <a href="docs/screenshots/x-eod-pst.png"><img src="docs/screenshots/x-eod-pst.png" alt="X 帖子中 EOD PST 换算为本地第二天 16:00" width="440"></a><br>
+      <strong>EOD PST</strong><br>
+      <code>24:00 → 第二天 16:00</code><br>
+      <a href="https://x.com/thsottiaux/status/2111492738025959922">X 原帖</a>
+    </td>
+    <td align="center" valign="top" width="50%">
+      <a href="docs/screenshots/x-10am-pst.png"><img src="docs/screenshots/x-10am-pst.png" alt="X 帖子中 10am PST 换算为本地第二天 02:00" width="440"></a><br>
+      <strong>10am PST</strong><br>
+      <code>10:00 → 第二天 02:00</code><br>
+      <a href="https://x.com/thsottiaux/status/2113492502355562875">X 原帖</a>
+    </td>
+  </tr>
+</table>
+
+## 安装
+
+1. [下载源码 ZIP](https://github.com/caopulan/time-lens/archive/refs/heads/main.zip)，解压到一个固定目录。
+2. 在 Chrome 打开 `chrome://extensions/`，或在 Edge 打开 `edge://extensions/`，启用开发者模式。
+3. 点击“加载已解压的扩展程序”，选择包含 `manifest.json` 的目录。
+4. 打开普通 HTTP/HTTPS 网页，选中一个带明确时区的时间表达，例如 `Nov 16, 2026 11:59 PM AOE`。
+
+浏览器内部页面、扩展商店和内置 PDF 查看器受限制；本版本也不匹配本地 `file://` 页面。站点权限设为“点击时”时，需先允许扩展访问该站点。
+
+### 更新已有安装
+
+1. 下载新 ZIP，将其中的扩展文件复制到**原来加载的扩展目录**，替换旧文件。
+2. 在扩展管理页点击 Time Lens 卡片上的重新加载按钮，确认版本为 **0.4.1**。
+3. 刷新正在测试的网页，让新内容脚本生效。
+4. 点击工具栏中的 Time Lens 图标打开设置面板。若工具栏未显示图标，可在扩展菜单中固定它。
+
+也可停用旧扩展，再从新目录加载；不要同时启用两份。
 
 ## 点击图标设置
 
@@ -87,16 +141,6 @@ Chrome 内部页面、Chrome 网上应用店和内置 PDF 查看器受限制；�
 | `00:30 UTC+8` | `UTC` | 空白 / `00:30` | 前一天 / `16:30` |
 
 表中的“空白”仅用于说明，实际浮窗不会写出“空白”或其他占位文字。
-
-## 截图案例
-
-同一帖子有 2026 年可靠发布时间时：
-
-`USA (PDT) Before 10:00 AM, Oct 23`
-
-上方：`周五 / 10月23日 / 10:00 / PDT / UTC-7`
-
-下方（Asia/Shanghai）：`周六 / 10月24日 / 01:00 / Asia/Shanghai / UTC+8`
 
 ## 验证与隐私
 
