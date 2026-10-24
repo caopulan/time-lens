@@ -12,19 +12,19 @@ Chrome / Edge Manifest V3 本地扩展。浮窗上方保留来源时间，下方
 
 ### 会议截止时间
 
-<p align="center"><a href="docs/screenshots/cvpr-2027-submission.jpg"><img src="docs/screenshots/cvpr-2027-submission.jpg" alt="CVPR 2027 官网的投稿时间与 Time Lens 跨日换算浮窗" width="900"></a></p>
+<p align="center"><a href="docs/screenshots/cvpr-2027-submission-centered.jpg"><img src="docs/screenshots/cvpr-2027-submission-centered.jpg" alt="CVPR 2027 官网的投稿时间与 Time Lens 跨日换算浮窗" width="900"></a></p>
 <p align="center"><strong>CVPR 2027 · 主会全文投稿</strong><br><code>2026-11-16 23:59 AoE → 2026-11-17 19:59</code> · <a href="https://cvpr.thecvf.com/Conferences/2027/CallForPapers">官网原页</a></p>
 
 <table>
   <tr>
     <td align="center" valign="top" width="50%">
-      <a href="docs/screenshots/iclr-2027-workshop.jpg"><img src="docs/screenshots/iclr-2027-workshop.jpg" alt="ICLR 2027 Workshop 申请时间跨日换算" width="440"></a><br>
+      <a href="docs/screenshots/iclr-2027-workshop-centered.jpg"><img src="docs/screenshots/iclr-2027-workshop-centered.jpg" alt="ICLR 2027 Workshop 申请时间跨日换算" width="440"></a><br>
       <strong>ICLR 2027 · Workshop 申请</strong><br>
       <code>2026-10-09 23:59 AoE → 2026-10-10 19:59</code><br>
       <a href="https://iclr.cc/Conferences/2027/CallForWorkshops">官网原页</a>
     </td>
     <td align="center" valign="top" width="50%">
-      <a href="docs/screenshots/aaai-2027-full-paper.jpg"><img src="docs/screenshots/aaai-2027-full-paper.jpg" alt="AAAI-27 全文投稿时间跨日换算" width="440"></a><br>
+      <a href="docs/screenshots/aaai-2027-full-paper-centered.jpg"><img src="docs/screenshots/aaai-2027-full-paper-centered.jpg" alt="AAAI-27 全文投稿时间跨日换算" width="440"></a><br>
       <strong>AAAI-27 · 主会全文投稿</strong><br>
       <code>2026-07-28 23:59 UTC−12 → 2026-07-29 19:59</code><br>
       <a href="https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/">官网原页</a>
