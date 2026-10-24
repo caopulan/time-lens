@@ -1,39 +1,39 @@
-<p align="center"><img src="icons/logo.svg" alt="Time Lens 图标" width="88"></p>
+<h1 align="center">Time Lens（Chrome 浏览器插件）</h1>
 
-<h1 align="center">Time Lens</h1>
-
-<p align="center">划选网页中的时间，直接看到它在本地的日期与时刻。</p>
-
-Chrome / Edge Manifest V3 本地扩展。浮窗上方保留来源时间，下方显示本地时间；星期、日期和 UTC 偏移随事件日期换算。原文没有日期时，浮窗只显示相对的跨日关系。
-
-## 真实网页
-
-以下截图来自会议官网和公开 X 帖子中的实际划词操作，目标时区均为 `Asia/Shanghai`。会议截图只裁切了浏览器画面，两张 X 截图按下载原图收录。CVPR 2027 的截止时间尚未到来；其余三个会议示例展示已经过去的截止时间。
+## Examples
 
 ### 会议截止时间
-
-<p align="center"><a href="docs/screenshots/cvpr-2027-submission-centered.jpg"><img src="docs/screenshots/cvpr-2027-submission-centered.jpg" alt="CVPR 2027 官网的投稿时间与 Time Lens 跨日换算浮窗" width="900"></a></p>
-<p align="center"><strong>CVPR 2027 · 主会全文投稿</strong><br><code>2026-11-16 23:59 AoE → 2026-11-17 19:59</code> · <a href="https://cvpr.thecvf.com/Conferences/2027/CallForPapers">官网原页</a></p>
 
 <table>
   <tr>
     <td align="center" valign="top" width="50%">
-      <a href="docs/screenshots/iclr-2027-workshop-centered.jpg"><img src="docs/screenshots/iclr-2027-workshop-centered.jpg" alt="ICLR 2027 Workshop 申请时间跨日换算" width="440"></a><br>
+      <a href="docs/screenshots/cvpr-2027-grid.jpg"><img src="docs/screenshots/cvpr-2027-grid.jpg" alt="CVPR 2027 主会投稿时间跨日换算" width="440"></a><br>
+      <strong>CVPR 2027 · 主会全文投稿</strong><br>
+      <code>2026-11-16 23:59 AoE</code><br><code>→ 2026-11-17 19:59</code><br>
+      <a href="https://cvpr.thecvf.com/Conferences/2027/CallForPapers">官网原页</a>
+    </td>
+    <td align="center" valign="top" width="50%">
+      <a href="docs/screenshots/emnlp-2026-grid.jpg"><img src="docs/screenshots/emnlp-2026-grid.jpg" alt="EMNLP 2026 Industry Track 投稿时间跨日换算" width="440"></a><br>
+      <strong>EMNLP 2026 · Industry Track 投稿</strong><br>
+      <code>2026-06-16 23:59 UTC−12</code><br><code>→ 2026-06-17 19:59</code><br>
+      <a href="https://2026.emnlp.org/calls/industry_track/">官网原页</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <a href="docs/screenshots/iclr-2027-grid.jpg"><img src="docs/screenshots/iclr-2027-grid.jpg" alt="ICLR 2027 Workshop 申请时间跨日换算" width="440"></a><br>
       <strong>ICLR 2027 · Workshop 申请</strong><br>
-      <code>2026-10-09 23:59 AoE → 2026-10-10 19:59</code><br>
+      <code>2026-10-09 23:59 AoE</code><br><code>→ 2026-10-10 19:59</code><br>
       <a href="https://iclr.cc/Conferences/2027/CallForWorkshops">官网原页</a>
     </td>
     <td align="center" valign="top" width="50%">
-      <a href="docs/screenshots/aaai-2027-full-paper-centered.jpg"><img src="docs/screenshots/aaai-2027-full-paper-centered.jpg" alt="AAAI-27 全文投稿时间跨日换算" width="440"></a><br>
+      <a href="docs/screenshots/aaai-2027-grid.jpg"><img src="docs/screenshots/aaai-2027-grid.jpg" alt="AAAI-27 全文投稿时间跨日换算" width="440"></a><br>
       <strong>AAAI-27 · 主会全文投稿</strong><br>
-      <code>2026-07-28 23:59 UTC−12 → 2026-07-29 19:59</code><br>
+      <code>2026-07-28 23:59 UTC−12</code><br><code>→ 2026-07-29 19:59</code><br>
       <a href="https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/">官网原页</a>
     </td>
   </tr>
 </table>
-
-<p align="center"><a href="docs/screenshots/emnlp-2026-industry.jpg"><img src="docs/screenshots/emnlp-2026-industry.jpg" alt="EMNLP 2026 Industry Track 投稿时间与 Time Lens 跨日换算浮窗" width="900"></a></p>
-<p align="center"><strong>EMNLP 2026 · Industry Track 投稿</strong><br><code>2026-06-16 23:59 UTC−12 → 2026-06-17 19:59</code> · <a href="https://2026.emnlp.org/calls/industry_track/">官网原页</a></p>
 
 ### 推文里的相对时间
 
@@ -63,20 +63,16 @@ Chrome / Edge Manifest V3 本地扩展。浮窗上方保留来源时间，下方
 3. 点击“加载已解压的扩展程序”，选择包含 `manifest.json` 的目录。
 4. 打开普通 HTTP/HTTPS 网页，选中一个带明确时区的时间表达，例如 `Nov 16, 2026 11:59 PM AOE`。
 
+<p align="center"><a href="docs/screenshots/edge-load-unpacked.jpg"><img src="docs/screenshots/edge-load-unpacked.jpg" alt="Edge 扩展管理页的加载解压缩的扩展按钮" width="820"></a></p>
+<p align="center"><a href="docs/screenshots/edge-time-lens-installed.jpg"><img src="docs/screenshots/edge-time-lens-installed.jpg" alt="Edge 扩展管理页中已启用的 Time Lens 0.4.1" width="820"></a></p>
+
 浏览器内部页面、扩展商店和内置 PDF 查看器受限制；本版本也不匹配本地 `file://` 页面。站点权限设为“点击时”时，需先允许扩展访问该站点。
 
-### 更新已有安装
+## 设置
 
-1. 下载新 ZIP，将其中的扩展文件复制到**原来加载的扩展目录**，替换旧文件。
-2. 在扩展管理页点击 Time Lens 卡片上的重新加载按钮，确认版本为 **0.4.1**。
-3. 刷新正在测试的网页，让新内容脚本生效。
-4. 点击工具栏中的 Time Lens 图标打开设置面板。若工具栏未显示图标，可在扩展菜单中固定它。
+点击工具栏中的 Time Lens 图标打开设置。修改后自动保存。
 
-也可停用旧扩展，再从新目录加载；不要同时启用两份。
-
-## 点击图标设置
-
-设置面板采用 ImageGen 辅助设计，温白背景、细分隔线和简约控件。只显示下面两个部分，没有顶部 Logo／名称，也没有底部保存提示、版本号或自测链接。修改后自动保存：
+<p align="center"><a href="docs/screenshots/settings-manual.jpg"><img src="docs/screenshots/settings-manual.jpg" alt="Edge 中实际打开的 Time Lens 设置面板，手动选择 Asia/Shanghai" width="400"></a></p>
 
 - **划词转换**：启用或暂停。关闭时，已经打开的划词浮窗也会收起。
 - **本地时区**：首次默认“跟随系统”，通过浏览器的 `Intl.DateTimeFormat().resolvedOptions().timeZone` 获取系统时区，无需定位权限。切到“手动选择”后，下拉列表列出浏览器提供的全部主要 IANA 时区，以及 `UTC`、有效的系统时区和已保存的时区别名。时区名称靠左；当前 UTC 偏移放在右侧的固定宽度列中。每行的 `UTC` 前缀从同一位置开始，后面的数值靠右对齐。长名称不会把 UTC 列挤开。选择后立即保存。
@@ -89,35 +85,10 @@ Chrome / Edge Manifest V3 本地扩展。浮窗上方保留来源时间，下方
 
 面板显示的是该时区**当前**的 UTC 偏移，重新聚焦设置窗口时刷新；带日期的实际时间换算仍根据事件日期处理夏令时。无效时区不会保存；写入失败会显示错误。
 
-## Logo
+## 更新
 
-最终图标采用纯 SVG 重绘，用于工具栏与扩展管理页，设置面板内部不显示 Logo。源文件为 `icons/logo.svg`，只包含纯色圆角矩形、圆形和时钟指针，没有嵌入位图、模糊滤镜、渐变或四周空白。背景铺满画布，仅圆角外部透明。
-
-`tools/build-icons.cjs` 从 SVG 导出 `icons/logo.png`，以及 16、24、32、48、64、128、256 像素的插件 PNG 图标。SVG 保留为可编辑、可任意缩放的源文件；扩展运行时不依赖导出工具或第三方库。此前的 ImageGen 参考与最终 SVG 实现说明见 `DESIGN.md`。
-
-## 0.4.1 更新
-
-- 手动下拉列表改为两列布局：时区名称在左，UTC 偏移固定在右。
-- `UTC` 前缀逐行对齐，后面的正负偏移数值在独立列内靠右；整小时、半小时和四分之一小时的显示位置一致。
-- 列表保留完整时区、当前偏移刷新、自动保存，以及鼠标和键盘选择操作。
-
-## 0.4.0 更新
-
-- 手动时区改为完整下拉列表，每个选项自带当前 UTC 偏移。
-- 支持只有时钟、没有日期的选区：来源日期为空，目标日期显示“前一天”“当天”或“第二天”；两块都不虚构星期或实际日期。
-- 对跨国际日期变更线等极端偏移，若实际差两天，会如实显示“前两天”或“后天”。
-- 使用纯 SVG 重绘 Logo，采用平面纯色与清晰几何轮廓，放大主体并去掉四周空白。
-
-## 已保留的日期修正
-
-- 年份位置改为对应日期的星期，如“周五”“周六”。分别按来源日期和转换后的本地日期计算，跨日、跨年不会沿用原星期。
-- UTC 偏移采用紧凑形式：整小时 `UTC-7`、`UTC+8`；非整小时保留分钟，如 `UTC+5:30`、`UTC+5:45`；零偏移显示 `UTC`。
-- 使用显式月份表：Sep/Sept 都是 9 月，Oct/Nov/Dec 正确为 10/11/12 月。
-- 正确处理带标点的月份、12 个月、ISO 时间和 UTC 偏移，避免把 `UTC+05:30` 当作事件时刻。
-- `PST` 固定 UTC-8，`PDT` 固定 UTC-7；`PT` / IANA 时区按事件日期使用夏令时规则。
-- 只有日期时不再捏造 `23:59:59`；时间字段完全省略。
-- 用 Shadow DOM 隔离浮窗样式；使用安全文字节点而不是 innerHTML；修正事件捕获和浮窗内部滚动关闭问题。
-- 采用内置 ImageGen 生成的极简视觉参考：上下同款、温白底色、细边框、柔和阴影、等宽数字。
+- **0.4.1 · 2026-10-24**：手动时区列表将名称和 UTC 偏移分列显示，整点、半小时和四分之一小时的偏移对齐；保留完整列表、键盘操作和自动保存。
+- **0.4.0 · 2026-10-24**：加入无日期时钟的相对跨日换算和完整时区选择；修正月份、星期、UTC 偏移、跨年及跨国际日期变更线的计算。
 
 ## 日期与缺失信息的规则
 
@@ -144,8 +115,12 @@ Chrome / Edge Manifest V3 本地扩展。浮窗上方保留来源时间，下方
 
 ## 验证与隐私
 
-使用 Node.js 22.22.2、24.15.0 或更新的受支持版本，运行 `npm ci && npm test` 可执行解析、浮窗和设置回归测试。单独运行 `node tests.js` 无需第三方依赖。`ui-tests.cjs` 使用 jsdom 检查两块 DOM、事件与系统时区变化，`settings-tests.cjs` 检查设置加载、自动保存、模式切换和错误处理。具备 Playwright Chromium 的本地环境还可运行 `npm run test:browser` 验证扩展注入；首次运行前执行 `npx playwright install chromium`。图标需要重新导出时运行 `npm run build:icons`。
+使用 Node.js 22.22.2、24.15.0 或更新的受支持版本，运行 `npm ci && npm test` 可执行解析、浮窗和设置回归测试。单独运行 `node tests.js` 无需第三方依赖。`ui-tests.cjs` 使用 jsdom 检查两块 DOM、事件与系统时区变化，`settings-tests.cjs` 检查设置加载、自动保存、模式切换和错误处理。具备 Playwright Chromium 的本地环境还可运行 `npm run test:browser` 验证扩展注入；首次运行前执行 `npx playwright install chromium`。
 
 0.4.1 已通过 207 项解析、20 项浮窗 DOM／事件和 27 项设置回归测试，覆盖跨日标签、时区偏移、保存顺序与键盘操作。Playwright Chromium 还验证了扩展注入、时间字段、内容安全策略和上下两块的计算样式；未进行像素级验收。附带的 `test.html` 提供可选中的自测样本。
 
-扩展运行时完全离线，不上传选区、网页或推文。设计阶段用 ImageGen 辅助视觉设计，扩展内不调用 AI。
+扩展运行时完全离线，不上传选区、网页或推文。
+
+## 许可证
+
+项目代码与原创文档采用 [MIT](LICENSE) 许可，© 2026 Pu Cao。截图中的第三方网页和帖子内容归原权利人所有。
