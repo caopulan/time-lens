@@ -1,0 +1,7 @@
+/* Detailed styling is isolated inside the popup's Shadow DOM in content.js. */
+#time-lens-root {
+  all: initial;
+  position: fixed;
+  z-index: 2147483647;
+  display: block;
+}

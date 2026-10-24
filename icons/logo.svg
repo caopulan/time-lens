@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 128 128" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Time Lens</title>
+  <rect width="128" height="128" rx="18" fill="#25272A"/>
+  <circle cx="64" cy="64" r="50.5" stroke="#F9F6ED" stroke-width="9"/>
+  <path d="M64 36V64L84 80" stroke="#F9F6ED" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="100" cy="29" r="8" fill="#FF9B69"/>
+</svg>

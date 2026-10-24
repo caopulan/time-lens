@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Time Lens · 自测</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="content.css">
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">TIME LENS · 0.4.1</div>
+      <h1>选中一句，核对两个时间。</h1>
+      <p class="intro">下面都是固定的测试样本。选中整行时间后，上方是解析结果，下方是你的本地时间。按 Esc 或点击外部关闭浮窗。</p>
+      <article>
+        <div class="example-label">截图中的月份回归案例</div>
+        <p id="screenshot-case" class="example">USA (PDT) Before 10:00 AM, Oct 23</p>
+        <time datetime="2026-10-23T04:47:00Z">固定发布锚点：2026-10-23T04:47:00Z</time>
+        <p class="expected">目标设为 Asia/Shanghai 时：周六，10 月 24 日 01:00，UTC+8。浮窗不显示年份。</p>
+      </article>
+      <article>
+        <div class="example-label">完整时间</div>
+        <p id="explicit-case" class="example">October 23, 2026 at 10:00 AM PDT</p>
+        <p class="expected">October 是 10 月，不是 11 月；PDT 是 UTC-7。</p>
+      </article>
+      <article>
+        <div class="example-label">只有日期</div>
+        <p id="date-only-case" class="example">May 04 '26 (Anywhere on Earth)</p>
+        <p class="expected">不显示时钟；整日换算到其他时区可能覆盖两个日期，因此显示日期范围。</p>
+      </article>
+      <article>
+        <div class="example-label">只有时间，跨到第二天</div>
+        <p id="time-only-next-case" class="example">10am PST</p>
+        <p class="expected">目标设为 Asia/Shanghai 时：原始日期空白，10:00；本地日期为“第二天”，02:00。两块都没有星期或实际日期。</p>
+      </article>
+      <article>
+        <div class="example-label">只有时间，跨到前一天</div>
+        <p id="time-only-previous-case" class="example">00:30 UTC+8</p>
+        <p class="expected">目标设为 UTC 时：原始日期空白，00:30；本地日期为“前一天”，16:30。</p>
+      </article>
+      <article>
+        <div class="example-label">点号时间写法</div>
+        <p id="punctuation-case" class="example">December 4, 2026 at 6 p.m. Pacific time</p>
+        <p class="expected">December 是 12 月；Pacific time 的偏移按事件日期计算。</p>
+      </article>
+      <div class="footer"><a href="options.html">设置目标时区</a><span>不联网，不调用 AI，不记录你划选的文字。</span></div>
+    </main>
+    <script src="parser.js"></script>
+    <script src="content.js"></script>
+  </body>
+</html>

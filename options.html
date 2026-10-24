@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Time Lens · 设置</title>
+    <link rel="icon" type="image/png" href="icons/icon32.png">
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="settings-shell">
+      <section class="enable-section" aria-label="划词转换开关">
+        <label class="enable-row" for="enabled">
+          <span class="enable-copy"><span class="section-title">划词转换</span><span class="section-description" id="enabled-description">选中时间，显示本地时区</span></span>
+          <span class="switch"><input type="checkbox" id="enabled" role="switch" aria-describedby="enabled-description" disabled><span class="switch-track" aria-hidden="true"></span></span>
+        </label>
+        <p id="status" class="setting-error" role="status" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="timezone-section" aria-labelledby="zone-heading">
+        <h2 id="zone-heading">本地时区</h2>
+        <div class="mode-control" role="group" aria-label="本地时区选择方式">
+          <button type="button" id="mode-system" aria-pressed="true" disabled>跟随系统</button>
+          <button type="button" id="mode-manual" aria-pressed="false" disabled>手动选择</button>
+        </div>
+        <div id="manual-zone" class="manual-zone" hidden>
+          <label for="localZone" id="timezone-label" class="input-label">选择时区</label>
+          <div id="timezone-picker" class="timezone-picker">
+            <button type="button" id="localZone" class="zone-control zone-row" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="timezone-options" aria-labelledby="timezone-label local-zone-name local-zone-offset" aria-describedby="zone-error" disabled>
+              <span id="local-zone-name" class="zone-name"></span>
+              <span id="local-zone-offset" class="zone-offset"><span class="utc-prefix">UTC</span><span class="utc-value"></span></span>
+              <span class="zone-mark zone-chevron" aria-hidden="true"></span>
+            </button>
+            <div id="timezone-options" class="zone-list" role="listbox" aria-labelledby="timezone-label" hidden></div>
+          </div>
+          <p id="zone-error" class="zone-error" role="alert" hidden></p>
+        </div>
+        <div class="zone-summary" aria-live="polite">
+          <span id="zone-caption" class="zone-caption">当前系统时区</span>
+          <div class="zone-value"><span id="active-zone">正在检测…</span><span id="active-offset" class="offset-badge"></span></div>
+        </div>
+      </section>
+
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
